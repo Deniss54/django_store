@@ -1,15 +1,14 @@
-from django.shortcuts import render, HttpResponseRedirect
-from products.models import ProductCategory, Product, Basket
 from django.contrib.auth.decorators import login_required
-from users.models import User
-from django.views.generic import TemplateView, ListView
+from django.shortcuts import HttpResponseRedirect
+from django.views.generic import ListView, TemplateView
+
 from common.views import CommonMixin
+from products.models import Basket, Product, ProductCategory
 
 
 class IndexView(CommonMixin, TemplateView):
     template_name = 'products/index.html'
     title = 'Store'
-
 
 
 class ProductsListView(CommonMixin, ListView):
