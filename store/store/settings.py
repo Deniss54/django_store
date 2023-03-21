@@ -26,7 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-DOMAIN_NAME = 'http://localhost:8000'
+DOMAIN_NAME = 'http://127.0.0.1:8000'
 
 # Application definition
 
@@ -44,9 +44,12 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'debug_toolbar',
+    'django.contrib.humanize',
 
     'products.apps.ProductsConfig',
+
     'users.apps.UsersConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
@@ -177,3 +180,10 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
+
+# Stripe
+
+STRIPE_PUBLIC_KEY = 'pk_test_51MdVgkDA7xyeTbK2WZPDBKBGGX4rleUakMzCxrPoQd6HNrTbwwMfOEfYksetQgkY4qaRGBc7THqdFebxOb0F4MRo00y7QjUIuh'
+STRIPE_SECRET_KEY = 'sk_test_51MdVgkDA7xyeTbK2LRymBFWFjiHCnxPrY8ioRgvp6dw7i6JctCxVgm1XX4e3KI2cl8iwFPN6gjXhcWLR7H8Q3wo900BvXZTHiz'
+STRIPE_WEBHOOK_SECRET = 'whsec_c8c1d4b45d612afe85aac2b79d887fbd6d2956856ff212fd3e10a8d6a4256901'
+
